@@ -11,6 +11,7 @@ from secrets import API_KEY
 from constants import ZAPOVIT_TRANSLATED, ABETKA_TRANSLATED, LONG_TRANSLATED,\
     BAD_SYMBOLS_REGEX, BAD_MESSAGE_TRANLATED, ONLY_OUR_SYMBOLS_REGEX, TRANSLATOR, \
     ERROR, EASTER_EGG_TEXT, EASTER_EGG_CORRECT, EASTER_EGG_INCORRECT
+from version import __version__
 
 
 # noinspection PyUnusedLocal
@@ -82,6 +83,13 @@ def handle_easter_egg_reply(update: Update, context: CallbackContext) -> None:
     return None
 
 
+# noinspection PyUnusedLocal
+def info(update: Update, context: CallbackContext) -> None:
+    msg = f"This is a hidden Cthulhu alphabet bot\nVersion {__version__}"
+    update.message.reply_text(msg)
+    return None
+
+
 def main():
     updater = Updater(API_KEY, workers=1)
 
@@ -94,6 +102,8 @@ def main():
     updater.dispatcher.add_handler(CommandHandler("1", zapovit))
     updater.dispatcher.add_handler(CommandHandler("2", tranlate_response))
     updater.dispatcher.add_handler(CommandHandler("3", easter_egg))
+
+    updater.dispatcher.add_handler(CommandHandler("info", info))
 
     updater.dispatcher.add_error_handler(error_handler)
 

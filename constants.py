@@ -99,7 +99,7 @@ ABETKA_TRANSLATED = "тут ви можете дізнатись абетку. �
 
 LONG_TRANSLATED = "це було б занадто легко. Тільки по 1 букві можна".lower().translate(TRANSLATOR)
 
-ALLOWED_SYMBOLS = ALPHABET_UA + string.punctuation.split() + ALPHABET_RUNE + [" "]
+ALLOWED_SYMBOLS = ALPHABET_UA + string.punctuation.split() + ALPHABET_RUNE + [" ", "’", "\n", "—"]
 PAT = r"[^{}]".format("".join(ALLOWED_SYMBOLS))
 BAD_SYMBOLS_REGEX = re.compile(PAT)
 

@@ -91,7 +91,7 @@ def info(update: Update, context: CallbackContext) -> None:
 
 
 def main():
-    updater = Updater(API_KEY, workers=1)
+    updater = Updater(API_KEY, workers=4)
 
     updater.dispatcher.add_handler(
         MessageHandler(

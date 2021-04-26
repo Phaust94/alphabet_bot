@@ -110,4 +110,4 @@ ERROR = "на жаль, сталась помилка".translate(TRANSLATOR)
 
 EASTER_EGG_TEXT = "Яка відповідь на питання життя, Всесвіту і взагалі?".lower().translate(TRANSLATOR)
 EASTER_EGG_CORRECT = "Вірно!!!".lower().translate(TRANSLATOR)
-EASTER_EGG_INCORRECT = "Ви хіба \"Путівник Галактикою\" не дивились?".lower().translate(TRANSLATOR)
+EASTER_EGG_INCORRECT = "Помилка! Ви хіба \"Путівник Галактикою\" не дивились?".lower().translate(TRANSLATOR)
